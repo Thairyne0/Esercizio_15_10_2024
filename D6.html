@@ -239,13 +239,42 @@
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {};
+      const addRow = function (productName, quantity, price) {
+        const table = document.querySelector("#tableArea table");
+        const newRow = document.createElement("tr");
+
+        const nameCell2 = document.createElement("td");
+        nameCell2.textContent = productName;
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = productName;
+
+        const quantityCell = document.createElement("td");
+        quantityCell.textContent = quantity;
+
+        const priceCell = document.createElement("td");
+        priceCell.textContent = price;
+
+        newRow.appendChild(nameCell2);
+        newRow.appendChild(nameCell);
+        newRow.appendChild(quantityCell);
+        newRow.appendChild(priceCell);
+
+        table.appendChild(newRow);
+      };
+
+      addRow("Dato1", "Dato2", "Dato3");
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
-      const hideAllImages = function () {};
+      const hideAllImages = function () {
+        const images = document.querySelectorAll("table img");
+        images.forEach((img) => (img.style.display = "none"));
+      };
+
+      hideAllImages();
 
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
